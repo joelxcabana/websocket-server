@@ -49,6 +49,10 @@ class Server {
             socket.on('disconnect',()=>{
                 console.log("cliente desconectado")
             })
+
+            socket.on("enviar-mensaje",(payload)=>{
+                console.log(payload)
+            })
         })
     }
 
