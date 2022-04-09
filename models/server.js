@@ -50,9 +50,14 @@ class Server {
                 console.log("cliente desconectado")
             })
 
+
+            //escucha si se emite desde otro lado el mensaje
             socket.on("enviar-mensaje",(payload)=>{
-                console.log(payload)
+                //enviar mensaje a todos los clientes conectados
+                this.io.emit('enviar-mensaje',payload)
             })
+
+
         })
     }
 
